@@ -245,6 +245,12 @@ Tabzilla.init = function()
         Tabzilla.toggle();
     });
 
+    // set up event listener for the locale-selector
+    Tabzilla.locale = document.getElementById('tabzilla-locale');
+    Tabzilla.addEventListener(Tabzilla.locale, 'change', function(e) {
+        Tabzilla.loadLocale();
+    });
+
     Tabzilla.$panel = jQuery(Tabzilla.panel);
     Tabzilla.$link  = jQuery(Tabzilla.link);
 
@@ -336,6 +342,13 @@ Tabzilla.preventDefault = function(ev)
     } else {
         ev.returnValue = false;
     }
+};
+
+Tabzilla.loadLocale = function(ev)
+{
+    $(".tabzillaLocale").each(function() {
+        $(this).html($(this).data("locale"));
+    });
 };
 
 Tabzilla.content =
