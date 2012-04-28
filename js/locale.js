@@ -11,7 +11,7 @@
  */
 
 ( function () {
-	// Yes, a closure - because, new namespaces are for... :P
+    // Yes, a closure - because, new namespaces are for... :P
 
     Tabzilla.l10n = { // The entire localization string tree
         "now"   : "en-US", // The current-locale, default to en-US
@@ -41,8 +41,9 @@
             linkWebDir:         "Website Directory",
 
             // Locale for Firefox Flicks Promotions
-            firefoxFlicks:      "Great prizes! Hollywood judges! Exclamation marks! Enter Firefox Flicks, the global video contest to tell our story, or vote for your favorites!</a>",
+            firefoxFlicks:      "Great prizes! Hollywood judges! Exclamation marks! Enter Firefox Flicks, the global video contest to tell our story, or vote for your favorites!",
         },
+
         "de-DE" : { // Locale strings for Germany German
 
             // Title Strings
@@ -68,9 +69,10 @@
             linkWebDir:         "Webseitenverzeichnis",
 
             // Locale for Firefox Flicks Promotions
-            firefoxFlicks:      "Tolle Preise! Hollywood judges! Viele Ausrufezeichen! Machen Sie bei Firefox Flicks mit, einem globalen Videowettbewerb um unsere Geschichte zu erzählen, oder stimmen Sie für Ihre Favoriten ab!</a>",
+            firefoxFlicks:      "Tolle Preise! Hollywood judges! Viele Ausrufezeichen! Machen Sie bei Firefox Flicks mit, einem globalen Videowettbewerb um unsere Geschichte zu erzählen, oder stimmen Sie für Ihre Favoriten ab!",
         },
-        "bn-IN" : { // Locale strings for US English
+
+        "bn-IN" : { // Locale strings for Indian Bengali
 
             // Title Strings
             titleMozilla:       "Mozilla",
@@ -95,7 +97,7 @@
             linkWebDir:         "Website Directory",
 
             // Locale for Firefox Flicks Promotions
-            firefoxFlicks:      "Great prizes! Hollywood judges! Exclamation marks! Enter Firefox Flicks, the global video contest to tell our story, or vote for your favorites!</a>",
+            firefoxFlicks:      "দারুন পুরস্কার! হলিউডের বিচারক! রামগরুরের ছানা! আরো অনেক কিছু! এই বিশ্বব্যাপী চলচিত্র প্রতিযোগিতায় যোগ দাও, অথবা পছন্দের প্রতিযোগী কে মনোনীত কর!",
         },
     }
 })();
