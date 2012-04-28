@@ -401,6 +401,7 @@ Tabzilla.content =
     + '        <select id="tabzilla-locale" title="Choose your language for Tabzilla">'
     + '          <option value="en-US">Show Tabzilla in...</option>'
     + '          <option value="en-US">English</option>'
+    + '          <option value="de-DE">German</option>'
     + '          <option value="bn-IN">Bengali</option>'
     + '        </select>'
     + '      </li>'
