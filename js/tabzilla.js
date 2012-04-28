@@ -248,6 +248,7 @@ Tabzilla.init = function()
     // set up event listener for the locale-selector
     Tabzilla.locale = document.getElementById('tabzilla-locale');
     Tabzilla.addEventListener(Tabzilla.locale, 'change', function(e) {
+        Tabzilla.l10n.now = $(Tabzilla.locale).val();
         Tabzilla.loadLocale();
     });
 
@@ -347,7 +348,7 @@ Tabzilla.preventDefault = function(ev)
 Tabzilla.loadLocale = function(ev)
 {
     $(".tabzillaLocale").each(function() {
-        $(this).html($(this).data("locale"));
+        $(this).html( Tabzilla.l10n[Tabzilla.l10n.now][$(this).data("locale")] );
     });
 };
 
@@ -376,7 +377,7 @@ Tabzilla.content =
     + '          <li><a class="tabzillaLocale" data-locale="linkThunderbird" href="http://www.mozilla.org/thunderbird">Thunderbird</a></li>'
     + '        </ul>'
     + '      </li>'
-    + '      <li><h2 class="tabzillaLocale" data-locale="titleInnocation">Innovations</h2>'
+    + '      <li><h2 class="tabzillaLocale" data-locale="titleInnovation">Innovations</h2>'
     + '        <ul>'
     + '          <li><a class="tabzillaLocale" data-locale="linkWebFWD" href="https://webfwd.org/">WebFWD</a></li>'
     + '          <li><a class="tabzillaLocale" data-locale="linkLabs" href="http://mozillalabs.com/">Labs</a></li>'
