@@ -2,6 +2,7 @@
 
 html { border-top: 2px solid #fff; }
 body {
+	color: #444;
 	margin: 0; padding: 0;
 	font: 16px Sans-serif;
 	background: rgb(249,249,249) url('../img/bg-stone.png') repeat-x top center;
@@ -14,7 +15,6 @@ header {
 	font-family: "Open Sans";
 }
 header > * {
-	color: #444;
 	margin: 0 auto;
 	font-weight: normal;
 }
@@ -24,6 +24,28 @@ header h1 {
 	line-height: 80px;
 	letter-spacing: -2px;
 	text-shadow: 0 1px 1px #fff, 0 -1px 1px #333;
+}
+section {
+	margin: 5% 20%;
+}
+section h2 {
+	margin-top: 32px;
+}
+section pre {
+	color: #333;
+	font-size: 12px;
+	padding: 4px 8px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	background: rgba(255, 255, 255, 0.5);
+}
+section pre#localeStruct {
+	float: right;
+	margin: 0 0 0 16px;
+}
+footer {
+	clear: both;
+	height: 64px;
 }
 
 #tabzilla-panel #tabzilla-nav ul li#tabzilla-search select  {

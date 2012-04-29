@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width" />
 
-	<title>Tabzilla</title>
+	<title>Tabzilla &mdash; Docs &amp; Demo</title>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,7 +26,35 @@
 		<h4>The universal tab for the Mozilla websites.</h4>
 	</header>
 	<section>
-		<pre>"en-US" : { // Locale strings for US English
+		<article>
+			<h2>Using Tabzilla</h2>
+			<p>Adding the universal tab requires to a site requires:
+				<ol>
+					<li>Add the static tab link (example below) to the top of your template
+					<pre>&lt;a href="http://www.mozilla.org/" id="tabzilla"&gt;mozilla&lt;/a&gt;</pre></li>
+					<li>Include the tabzilla.css CSS file either as a CSS include or built into your minified styles <pre>&lt;link href="//www.mozilla.org/tabzilla/media/css/tabzilla.css" rel="stylesheet" /&gt;</pre></li>
+					<li>Include the tabzilla.js file in your template (preferably in the footer) <pre>&lt;script src="//www.mozilla.org/tabzilla/media/js/tabzilla.js"&gt;&lt;/script&gt;</pre></li>
+				</ol>
+			</p>
+		</article>
+		<article>
+			<h2>Using Localized Tabzilla</h2>
+			<p>To use <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=744271" title="Feature Request Bug" target="_blank">localizable version of tabzilla</a>, you need to go by step 1 &amp; step 2 as before. Then in the step 3, instead of the previous one, add these two JavaScripts as follows:
+				<pre>&lt;script src="https://raw.github.com/debloper/tabzilla/master/media/js/tabzilla.js"&gt;&lt;/script&gt;
+&lt;script src="https://raw.github.com/debloper/tabzilla/master/media/js/locale.js"&gt;&lt;/script&gt;</pre>
+			<p>You can see the a working example of <b>localized tabzilla</b> in this page itself &mdash; if you need reference.</p>
+			<p>Once the localization code is mature (probably by next week), you can expect it to be loaded from the same Mozilla-server as before. For now, just use it for testing and please don't use it for production.
+			</p>
+		</article>
+		<article>
+			<h2>Presetting Tabzilla's Language</h2>
+			<p>Tabzilla will load English[US] by default. If you want to change this behavior, and want it to initialize in your favorite language, then in the step 1 you need to mention the language code as a data-attribute to the anchor-tag:
+				<pre>&lt;a href="http://www.mozilla.org/" id="tabzilla" <span style="color: red;">data-locale="de-DE"</span>&gt;mozilla&lt;/a&gt;</pre>
+			</p>
+		</article>
+		<article>
+			<h2>Contribute to Tabzilla's Localization</h2>
+			<pre id="localeStruct">"en-US" : { // Locale strings for US English
 
     // Title Strings
     titleMozilla:       "Mozilla",
@@ -56,15 +84,12 @@
         Flicks, the global video contest to tell
         our story, or vote for your favorites!",
 }</pre>
-		<article>
-			<h2></h2>
-			<p></p>
-		</article>
-		<article>
-			<h2></h2>
-			<p></p>
+			<p>For now, I have partially added Bengali[IN] locale and our community member Jan Bambach contributed the German[DE] locale strings.</p>
+			<p>If you want to see tabzilla in your own language, then step forward &amp; submit the l10n-strings. All you need to do is to change the English strings (within quotes) with your language's translated word(s), along with the language code (as you see beside) &mdash; and, send this in.</p>
+			<p>If you have a GitHub account, then please <a href="https://github.com/mozilla/tabzilla/issues" title="GitHub Issues - Tabzilla" target="_blank">check for an issue</a> with your language code (else create one) &amp; post the translation as a comment. If you don't have a GitHub account, then come talk to us at <code>#mcs</code> in Mozilla-IRC and we'll figure something out.</p>
 		</article>
 	</section>
+	<footer></footer>
 	<script src="https://raw.github.com/debloper/tabzilla/master/media/js/tabzilla.js"></script>
 	<script src="https://raw.github.com/debloper/tabzilla/master/media/js/locale.js"></script>
 </body>
