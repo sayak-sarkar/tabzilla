@@ -15,6 +15,11 @@
 
     Tabzilla.l10n = { // The entire localization string tree
         "now"   : "en-US", // The current-locale, default to en-US
+        "all"   : {
+            "en-US":    "English",
+            "bn-IN":    "বাংলা",
+            "de-DE":    "Deutsch",
+        },
 
         "en-US" : { // Locale strings for US English
 
@@ -100,4 +105,32 @@
             firefoxFlicks:      "দারুন পুরস্কার! হলিউডের বিচারক! রামগরুরের ছানা! আরো অনেক কিছু! Firefox Flicks &mdash; এই বিশ্বব্যাপী চলচিত্র প্রতিযোগিতায় যোগ দাও, অথবা পছন্দের প্রতিযোগী কে মনোনীত কর!",
         },
     }
+
+    Tabzilla.l10n.selector = document.createElement("select");
+    Tabzilla.l10n.selector.setAttribute("id", "tabzilla-locale");
+    Tabzilla.l10n.selector.setAttribute("title", "Choose your language for Tabzilla");
+
+    Tabzilla.l10n.selector.innerHTML = '<option value="en-US">Show Tabzilla in...</option>';
+    for (var i in Tabzilla.l10n.all) {
+          Tabzilla.l10n.selector.innerHTML += '<option value="' + i + '">'+ Tabzilla.l10n.all[i] +'</option>';
+    }
+
+    Tabzilla.loadLocale = function(ev)
+    {
+        $(".tabzillaLocale").each(function() {
+            $(this).html( Tabzilla.l10n[Tabzilla.l10n.now][$(this).data("locale")] );
+        });
+    };
+
+    jQuery(document).ready(function() {
+        // Push the select-element into the DOM
+        document.getElementById("tabzilla-search").appendChild(Tabzilla.l10n.selector);
+
+        // Set up event listener for the locale-selector
+        Tabzilla.locale = document.getElementById('tabzilla-locale');
+        Tabzilla.addEventListener(Tabzilla.locale, 'change', function(e) {
+            Tabzilla.l10n.now = $(Tabzilla.locale).val();
+            Tabzilla.loadLocale();
+        });
+    });
 })();

@@ -245,13 +245,6 @@ Tabzilla.init = function()
         Tabzilla.toggle();
     });
 
-    // set up event listener for the locale-selector
-    Tabzilla.locale = document.getElementById('tabzilla-locale');
-    Tabzilla.addEventListener(Tabzilla.locale, 'change', function(e) {
-        Tabzilla.l10n.now = $(Tabzilla.locale).val();
-        Tabzilla.loadLocale();
-    });
-
     Tabzilla.$panel = jQuery(Tabzilla.panel);
     Tabzilla.$link  = jQuery(Tabzilla.link);
 
@@ -345,13 +338,6 @@ Tabzilla.preventDefault = function(ev)
     }
 };
 
-Tabzilla.loadLocale = function(ev)
-{
-    $(".tabzillaLocale").each(function() {
-        $(this).html( Tabzilla.l10n[Tabzilla.l10n.now][$(this).data("locale")] );
-    });
-};
-
 Tabzilla.content =
     '<div id="tabzilla-contents">'
     + '  <div id="tabzilla-promo">'
@@ -398,12 +384,6 @@ Tabzilla.content =
     + '          <input type="hidden" value="FORID:0" name="cof">'
     + '          <input type="search" placeholder="Search" id="q" name="q">'
     + '        </form>'
-    + '        <select id="tabzilla-locale" title="Choose your language for Tabzilla">'
-    + '          <option value="en-US">Show Tabzilla in...</option>'
-    + '          <option value="en-US">English</option>'
-    + '          <option value="de-DE">German</option>'
-    + '          <option value="bn-IN">Bengali</option>'
-    + '        </select>'
     + '      </li>'
     + '    </ul>'
     + '  </div>'
