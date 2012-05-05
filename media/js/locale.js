@@ -63,7 +63,7 @@
 
             // Title Strings
             titleMozilla:       "Mozilla",
-            titleProducts:      "পণ্য",
+            titleProducts:      "উৎপণ্য দ্রব্য ",
             titleInnovation:    "উদ্ভাবনা",
             titleGetInvolved:   "লিপ্ত হউন",
 
